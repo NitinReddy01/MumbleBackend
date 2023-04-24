@@ -10,7 +10,7 @@ app.use(cors());
 
 const io =new Server(http,{
     cors :{
-        origin : "https://peppy-stardust-bd911c.netlify.app/", 
+        origin : "*", 
         methods:["GET","POST"],
     },   
 });

@@ -43,7 +43,11 @@ io.on('connection',socket =>{
         socket.on("save-document", async (data)=>{
             await Document.findByIdAndUpdate(id,{data})
         })
-    }) 
+    })
+    socket.on('canvas-data', (data)=> {
+        socket.broadcast.emit('canvas-data', data);
+        console.log("whitboard");
+  }) 
 })
 
 let findOrCreateDocument = async (id)=>{
